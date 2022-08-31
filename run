@@ -32,7 +32,6 @@
     const currentdirectory = __dirname;
     async function installcrontab(dir) {
        try {
-		  cmd.runSync('sudo apt-get -y install lm-sensors ipmitool');
           cmd.runSync('sudo rm -f /usr/bin/node && sudo ln -s $(which node) /usr/bin/');
           cmd.runSync('touch mycron && crontab -u root ./mycron && crontab -l > mycron && echo "* * * * * (/usr/bin/node ' + dir + '/run -t)" >> mycron && crontab -u root mycron && rm mycron');
        } catch (e) {
@@ -62,6 +61,7 @@
 // Display the help menu
 
  } else if (options.help) {
+ 	cmd.runSync('sudo apt-get -y install lm-sensors ipmitool');
     console.log("\nWelcome to my Dell PowerEdge R420 STFU app! \n".brightYellow);
     console.log("Below are some commands to get you started: \n".green);
     makehelpmenu();;
