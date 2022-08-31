@@ -52,7 +52,7 @@
        console.log(temperature.max + "°");
        if (temperature.max >= 60) {
           cmd.runSync('/usr/bin/ipmitool raw 0x30 0x30 0x01 0x01 > /dev/null 2>&1');
-       } else if (temperature.max < 52) {
+       } else if (temperature.max <= 52) {
           cmd.runSync('/usr/bin/ipmitool raw 0x30 0x30 0x01 0x00 > /dev/null 2>&1 && /usr/bin/ipmitool raw 0x30 0x30 0x02 0xff 0x14 > /dev/null 2>&1');
        }
     }
