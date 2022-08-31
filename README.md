@@ -6,7 +6,7 @@ Using a temperature threshold the fans will automatically increase when it gets 
 shut the fuck up when the temps are cool.
 
 
-
+This program was built for _DEBIAN / UBUNTU_ server enviroments!
 
 ## Installation
 
